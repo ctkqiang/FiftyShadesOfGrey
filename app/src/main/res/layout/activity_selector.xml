@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ApplicationActivity">
+    tools:context=".Activities.SelectorActivity">
 
     <ListView
-        android:id="@+id/list_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="291dp"
+        tools:layout_editor_absoluteY="193dp" />
 </RelativeLayout>

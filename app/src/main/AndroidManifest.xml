@@ -18,9 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FiftyShadesOfGrey"
         tools:ignore="AllowBackup">
-        <activity android:name=".activities.ApplicationActivity" />
+        <activity android:name=".Activities.SelectorActivity"></activity>
+        <activity android:name=".Activities.ApplicationActivity" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

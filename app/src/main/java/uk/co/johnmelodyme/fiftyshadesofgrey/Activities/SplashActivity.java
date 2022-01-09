@@ -1,6 +1,5 @@
-package uk.co.johnmelodyme.fiftyshadesofgrey.activities;
+package uk.co.johnmelodyme.fiftyshadesofgrey.Activities;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,9 +34,9 @@ public class SplashActivity extends AppCompatActivity
             public void run()
             {
                 Intent i = new Intent(SplashActivity.this, ApplicationActivity.class);
-                startActivity(i);
+                SplashActivity.this.startActivity(i);
 
-                Log.d(TAG, "...SplashActivity called.");
+                Log.d(TAG, "... Splash called.");
 
                 SplashActivity.this.finish();
             }
