@@ -1,0 +1,46 @@
+CREATE TABLE fiftyshadesofgrey(
+   id    INTEGER  NOT NULL PRIMARY KEY 
+  ,quote VARCHAR(251) NOT NULL
+);
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (0,'You have to kiss a lot of frogs before you find your prince');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (1,'Don’t get your panties in such a twist… and give me back mine.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (2,'Sometimes I wonder if there’s something wrong with me. Perhaps I’ve spent too long in the company of my literary romantic heroes, and consequently my ideals and expectations are far too high.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (3,'I’ve kissed a prince, Mom. I hope it doesn’t turn into a frog.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (4,'Uh, how about we try a few with a smile? [takes photo] Or not.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (5,'I’m just trying to get through finals right now.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (6,'I don’t know. Books? Okay… rope, tape, cable ties. You’re the complete serial killer.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (7,'It’s nice to meet you. There’s been a lot of speculation!');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (8,'Oh, fuck the paperwork.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (9,'Anastasia Steele:  Do you have any interests outside of work. Christian Grey: I enjoy various physical pursuits.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (10,'What would I get out of all this? Me.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (11,'I don’t make love. I fuck hard.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (12,'I’d like to fuck you into the middle of next week.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (13,'I have rules. If you follow them, I’ll reward you. If you don’t, I’ll punish you');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (14,'I don’t do romance.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (15,'I’d like to bite that lip.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (16,'I told you… I don’t sleep with anyone.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (17,'I never took anyone in the helicopter. Never had sex in my own bed. Never slept next to anyone. Ever! Only you');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (18,'You want hearts and flowers? That’s not something I know.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (19,'Show me, then. I need you to show me. What you want to do to me. Punish me! Show me how bad it can be. I want you to show me the worst. It’s the only way I can understand.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (20,'You’re mine. All mine. You understand?');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (21,'He was polite. Intense. Smart. Really intimidating.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (22,'I don’t know if I can be with him the way he needs me to.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (23,'I could just take all my clothes off.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (24,'The woman who gave birth to me, was a crack addict. And a prostitute. She died when I was four. I remember certain things. Terrible things. I don’t remember her. But sometimes, I think I see her in my dreams.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (25,'Every time you move tomorrow, I want you to be reminded that I’ve been here. Only me. You are mine.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (26,'I want to chase the dawn with you');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (27,'You will not be able to see me or hear me. But you’ll be able to feel me.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (28,'I don’t know whether to worship at your feet or spank the living shit out of you.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (29,'I want you sore, baby.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (30,'I lay awake for hours and watched you sleep…I may have loved you even then.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (31,'But I’m a selfish man. I’ve wanted you since you fell into my office. You are exquisite, honest, warm, strong, witty, beguilingly innocent; the list is endless.“I want you, and the thought of anyone else having you is a knife twisting in my dark soul.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (32,'You’re the only person I’d fly three thousand miles to see.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (33,'You are not just a pretty face. You’ve had six orgasms so far and all of them belong to me.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (34,'Christian, you are the state lottery, the cure for cancer, and the three wishes from Aladdin’s lamp all rolled into one');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (35,'My inner goddess sits in the lotus position looking serene except for the sly, self-congratulatory smile on her face.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (36,'My inner goddess jumps up and down with cheer-leading pom-poms shouting yes at me.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (37,'“I’m losing all sense of self, every atom of my being concentrating hard on that small, potent powerhouse at the apex of my thighs.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (38,'He then starts on my right foot, repeating the whole, seductive, mind-blowing process.” “He’s going to kiss me there! I know it. And part of me is glowing in the anticipation.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (39,'He’s my very own Christian Grey-flavored popsicle.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (40,'And then his hand is no longer there … and he hits me—hard.');
+INSERT INTO fiftyshadesofgrey(id,quote) VALUES (41,'You beguile me, Christian. Completely overwhelm me. I feel like Icarus flying too close to the sun.');
