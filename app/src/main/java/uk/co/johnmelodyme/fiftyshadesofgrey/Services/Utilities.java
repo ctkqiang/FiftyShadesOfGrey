@@ -26,6 +26,8 @@ public class Utilities
     public String getParsedData(Activity activity, String key)
     {
         Intent intent = activity.getIntent();
+        
+        Log.d(TAG, "getParsedData from another activity");
 
         return intent.getStringExtra(key);
     }

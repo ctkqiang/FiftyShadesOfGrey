@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 import uk.co.johnmelodyme.fiftyshadesofgrey.Services.Utilities;
@@ -27,6 +28,10 @@ public class SelectorActivity extends AppCompatActivity
         SelectorActivity.this.getWindow().setContentView(R.layout.activity_selector);
 
         /* if else logic */
+
+        Toast.makeText(SelectorActivity.this, String.valueOf(this.getPageId(SelectorActivity.this)),
+                Toast.LENGTH_SHORT
+        ).show();
     }
 
     @Override
