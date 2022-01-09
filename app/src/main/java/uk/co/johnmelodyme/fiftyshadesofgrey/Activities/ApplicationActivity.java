@@ -11,14 +11,20 @@ import android.widget.ListView;
 import uk.co.johnmelodyme.fiftyshadesofgrey.Constants.MenuConstants;
 import uk.co.johnmelodyme.fiftyshadesofgrey.CustomComponents.CustomMenuList;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
+import uk.co.johnmelodyme.fiftyshadesofgrey.Services.Utilities;
 
 public class ApplicationActivity extends AppCompatActivity
 {
     private static final String TAG = "50ShadesOfGrey";
+
+    public Utilities utilities;
     public ListView listView;
 
     public void renderComponents()
     {
+        /* Get Utilities class */
+        utilities = new Utilities(TAG);
+
         /* Set content view to activity */
         ApplicationActivity.this.getWindow().setContentView(R.layout.activity_main);
 
@@ -43,15 +49,12 @@ public class ApplicationActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
             {
-                switch (MenuConstants.id[position])
-                {
-                    case 0:
-
-                    case 1:
-                    case 2:
-                    default:
-                        break;
-                }
+                utilities.parseData(
+                        ApplicationActivity.this,
+                        SelectorActivity.class,
+                        "id",
+                        MenuConstants.id[position].toString()
+                );
 
                 Log.d(TAG, "... Navigate to " + MenuConstants.menuNames[position]);
             }
