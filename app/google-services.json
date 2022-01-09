@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "367716345069",
+    "project_id": "supercuple",
+    "storage_bucket": "supercuple.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367716345069:android:65ad00a1c0266752a7d8e4",
+        "android_client_info": {
+          "package_name": "uk.co.johnmelodyme.fiftyshadesofgrey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367716345069-oat3fl6rd0nds01ik43kqel9nqlplenf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.co.johnmelodyme.fiftyshadesofgrey",
+            "certificate_hash": "33e88aca0cc4ecced20bf39f4915aa70e699a8c5"
+          }
+        },
+        {
+          "client_id": "367716345069-q34lc54ofjt850c0oossajlagd6er4n6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjRYNT3HV_jZdmBGTfB2JNZ98VQ_INk3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367716345069-q34lc54ofjt850c0oossajlagd6er4n6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

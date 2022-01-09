@@ -1,11 +1,14 @@
-package uk.co.johnmelodyme.fiftyshadesofgrey;
+package uk.co.johnmelodyme.fiftyshadesofgrey.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity
+import uk.co.johnmelodyme.fiftyshadesofgrey.R;
+
+public class ApplicationActivity extends AppCompatActivity
 {
+    private static final String TAG = "50ShadesOfGrey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

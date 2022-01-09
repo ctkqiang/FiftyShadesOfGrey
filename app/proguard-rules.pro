@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Eliminate package name
+-repackageclasses
+
+# keep this class
+#-keep public class uk.co.johnmelodyme.baofeng888.Model.Model
