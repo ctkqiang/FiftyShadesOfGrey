@@ -108,9 +108,8 @@ public class SelectorActivity extends AppCompatActivity
 
                 break;
 
-
-            case 2:
-            case 3:
+            case 2: /*TODO add this */
+            case 3: /*TODO add this */
             default:
                 break;
         }
