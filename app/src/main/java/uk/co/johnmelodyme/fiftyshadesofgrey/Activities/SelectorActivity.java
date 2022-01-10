@@ -4,14 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import uk.co.johnmelodyme.fiftyshadesofgrey.Constants.BooksMenu;
+import uk.co.johnmelodyme.fiftyshadesofgrey.CustomComponents.EbookMenuList;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
-import uk.co.johnmelodyme.fiftyshadesofgrey.Services.Utilities;
+import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.Utilities;
 
 public class SelectorActivity extends AppCompatActivity
 {
     private static final String TAG = "50ShadesOfGrey";
+    public ListView listView;
     public Utilities utilities;
 
     public int getPageId(Activity activity)
@@ -27,11 +33,54 @@ public class SelectorActivity extends AppCompatActivity
         /* Set content view to activity */
         SelectorActivity.this.getWindow().setContentView(R.layout.activity_selector);
 
-        /* if else logic */
+        /* Declaration of layout user components */
+        listView = (ListView) findViewById(R.id.selector_listview);
 
-        Toast.makeText(SelectorActivity.this, String.valueOf(this.getPageId(SelectorActivity.this)),
-                Toast.LENGTH_SHORT
-        ).show();
+        switch (this.getPageId(SelectorActivity.this))
+        {
+            case 0:
+
+                /* Occupy list view with the constant data */
+                EbookMenuList ebookMenuList = new EbookMenuList(
+                        SelectorActivity.this,
+                        BooksMenu.id,
+                        BooksMenu.bookCover,
+                        BooksMenu.file,
+                        BooksMenu.bookTitle,
+                        BooksMenu.bookDescription
+                );
+
+                /* Assign adapter to listView */
+                this.listView.setAdapter(ebookMenuList);
+
+                /* Assign onClick event for listView */
+                this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position,
+                                            long l)
+                    {
+                        utilities.parseData(
+                                SelectorActivity.this,
+                                BookActivity.class,
+                                "book_asset",
+                                String.valueOf(BooksMenu.file[position])
+                        );
+
+                        Log.d(TAG, "... opening ebook at " + position);
+                    }
+                });
+
+                break;
+
+            case 1:
+            case 2:
+            case 3:
+            default:
+                break;
+        }
+
+        Log.d(TAG, "renderComponents: item number " + this.getPageId(SelectorActivity.this));
     }
 
     @Override

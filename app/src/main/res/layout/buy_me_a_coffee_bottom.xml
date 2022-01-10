@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/donate_google_pay"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:background="@drawable/donate"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_marginEnd="50dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginBottom="30dp"-->
+    <!--        android:layout_height="90dp"-->
+    <!--        android:foreground="?attr/selectableItemBackgroundBorderless"-->
+    <!--        tools:ignore="ContentDescription,UnusedAttribute" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:textSize="16sp"
+        android:paddingTop="3dp"
+        android:text="@string/donationmsg"
+        android:textAlignment="center" />
+
+    <ImageButton
+        android:id="@+id/buymecoffee"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/buymecoffeebackground"
+        android:foreground="@drawable/buymecoffee"
+        tools:ignore="ContentDescription,UnusedAttribute" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:paddingTop="3dp"
+        android:textSize="10sp"
+        android:layout_marginBottom="1sp"
+        android:text="@string/caption_buy_me_coffee"
+        android:textAlignment="center"
+        tools:ignore="SmallSp" />
+</LinearLayout>

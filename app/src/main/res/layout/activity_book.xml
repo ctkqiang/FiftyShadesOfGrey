@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SelectorActivity">
+    tools:context=".Activities.BookActivity">
 
-    <ListView
-        android:id="@+id/selector_listview"
+    <WebView
+        android:id="@+id/book_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:focusable="true" />
+        android:padding="10dp" />
+
 </RelativeLayout>

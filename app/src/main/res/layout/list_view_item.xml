@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="23dp"
+    android:layout_marginEnd="23dp">
 
     <ImageView
         android:id="@+id/item_image"
@@ -17,24 +20,30 @@
 
     <TextView
         android:id="@+id/item_title"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_columnWeight="1"
         android:layout_marginStart="10dp"
         android:layout_marginTop="13dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginEnd="23dp"
+        android:maxLines="2"
         android:text="@string/demo_title"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="TextViewEdits" />
 
     <TextView
         android:id="@+id/item_description"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_columnWeight="1"
+        android:maxLines="20"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="13dp"
-        android:text="@string/item_description" />
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="23dp"
+        android:singleLine="false"
+        android:text="@string/item_description"
+        tools:ignore="TextViewEdits" />
 </GridLayout>

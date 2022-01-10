@@ -13,7 +13,7 @@ import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 public class SplashActivity extends AppCompatActivity
 {
     private static final String TAG = "50ShadesOfGrey";
-    private static final int DELAY = 0xbb8;
+    private static final int DELAY = 0x7d0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity
         /* Set Color to bottom navigation bar */
         SplashActivity.this.getWindow().setNavigationBarColor(ContextCompat.getColor(SplashActivity.this, R.color.black));
 
-        /* Run splash screen delayed to 3000 milliseconds */
+        /* Run splash screen delayed to 2000 milliseconds */
         new Handler().postDelayed(new Runnable()
         {
             @Override

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="demo_title">title</string>
     <string name="item_description">description</string>
+    <string name="fifty_shades_wiki">https://services.fandom.com/recommendations/recommendations?wikiId=514215&amp;articleId=1461</string>
+    <string name="about">About</string>
+    <string name="report">Report to dev</string>
+    <string name="support">Support this app</string>
+    <string name="about_dev_msg">About This Application</string>
+    <string name="ok">Okay</string>
+    <string name="about_body">This application is developed by <b>John Melody Me</b> for providing BAOFENG 888s Walkie-Talkie configuration details. </string>
+    <string name="custom_prompt_title">Please provide the bug you would like to report</string>
+    <string name="custom_prompt_title_hint">Enter What you would like to report</string>
+    <string name="send">Send Report</string>
+    <string name="cancel">Cancel</string>
+    <string name="support_project">Support this project</string>
+    <string name="donate">Donate</string>
+    <string name="fuck_not_allowed">Vulgar words are prohibited.</string>
+    <string name="exceed_report">You had exceeds the amount of bug reports.</string>
+    <string name="loading" tools:ignore="TypographyEllipsis">Getting Data...</string>
+    <string name="could_not_get_data">Couldn\'t Get Data</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="configuration_title">Baofeng-888 Configuration</string>
+    <string name="buymecoffee">https://www.buymeacoffee.com/johnmelodymel</string>
+    <string name="donationmsg">Support the developer by clicking the button below</string>
+    <string name="banner_ad_unit_id">ca-app-pub-7608533085938915~4071664884</string>
+    <string name="ads_id">ca-app-pub-7608533085938915/6799584783</string>
+    <string name="caption_buy_me_coffee">*By clicking the button above, you will be redirected to 3rd party source.</string>
 </resources>

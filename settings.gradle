@@ -1,2 +1,8 @@
+include ':folioreader'
+include ':folioreader'
+include ':sample'
+include ':DiscordLogger'
 include ':app'
+project(':sample').projectDir = new File(rootDir, 'app/libs/FolioReader-Android/sample/')
+project(':folioreader').projectDir = new File(rootDir, 'app/libs/FolioReader-Android/folioreader/')
 rootProject.name = "Fifty Shades Of Grey"
