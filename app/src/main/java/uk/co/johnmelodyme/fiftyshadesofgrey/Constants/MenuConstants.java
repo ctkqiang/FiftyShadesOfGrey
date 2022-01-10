@@ -4,7 +4,7 @@ import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
 public class MenuConstants
 {
-    public static Integer[] id = {0, 1, 2};
+    public static Integer[] id = {0, 1, 2, 3};
     public static String[] menuNames = {
             "E-book",
             "Movies",

@@ -9,7 +9,9 @@
     <ListView
         android:id="@+id/list_menu"
         android:clickable="true"
+        android:dividerHeight="1sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@color/grey"
         android:focusable="true" />
 </RelativeLayout>

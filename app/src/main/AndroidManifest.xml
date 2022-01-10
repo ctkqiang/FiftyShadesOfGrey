@@ -21,7 +21,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FiftyShadesOfGrey"
         tools:ignore="AllowBackup">
-        <activity android:name=".Activities.BookActivity"></activity>
+        <activity android:name=".Activities.VideoActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
+        <activity android:name=".Activities.BookActivity" />
         <activity android:name=".Activities.SelectorActivity" />
         <activity android:name=".Activities.ApplicationActivity" />
         <activity

@@ -5,6 +5,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
 public class Services
@@ -19,5 +25,12 @@ public class Services
         context.startActivity(browserIntent);
 
         Log.d(TAG, "=> onOpenBuyMeCoffee: #opening buy me a coffee web-page ");
+    }
+
+    public static void downloadSource(String endpointUrl)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        StorageReference httpsReference = storage.getReferenceFromUrl(endpointUrl);
     }
 }

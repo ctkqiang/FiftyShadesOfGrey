@@ -56,11 +56,11 @@ public class BookActivity extends AppCompatActivity
         /* Load Book asset */
         this.webView.requestFocus();
         this.webView.getSettings().setJavaScriptEnabled(true);
-        this.webView.loadUrl(
-                "https://docs.google.com/viewer?embedded=true&url=" +
-                "https://raw.githubusercontent.com/johnmelodyme/FiftyShadesOfGrey/main/app/src"
-                + "/main/res/raw/" +
-                this.getBookAsset(BookActivity.this)
+        this.webView.loadUrl("https://docs.google.com/viewer?embedded=true&url=https://raw"
+                             + ".githubusercontent.com/johnmelodyme/FiftyShadesOfGrey"
+                             + "/cc13e798b23f607b19af1d2087da0d1d78c85c08/app/src/main/assets/" +
+                             this.getBookAsset(BookActivity.this)
+
         );
 
         this.webView.setWebViewClient(new WebViewClient()
@@ -68,11 +68,10 @@ public class BookActivity extends AppCompatActivity
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request)
             {
-                view.loadUrl(
-                        "https://docs.google.com/viewer?embedded=true&url=" +
-                        "https://raw.githubusercontent"
-                        + ".com/johnmelodyme/FiftyShadesOfGrey/main/app/src/main/res/raw/" +
-                        getBookAsset(BookActivity.this)
+                view.loadUrl("https://docs.google.com/viewer?embedded=true&url=https://raw"
+                             + ".githubusercontent.com/johnmelodyme/FiftyShadesOfGrey"
+                             + "/cc13e798b23f607b19af1d2087da0d1d78c85c08/app/src/main/assets/" +
+                             getBookAsset(BookActivity.this)
                 );
                 return true;
             }
