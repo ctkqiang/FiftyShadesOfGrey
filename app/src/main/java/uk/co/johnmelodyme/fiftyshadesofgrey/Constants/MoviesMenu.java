@@ -1,16 +1,18 @@
 package uk.co.johnmelodyme.fiftyshadesofgrey.Constants;
 
+import uk.co.johnmelodyme.fiftyshadesofgrey.R;
+
 public class MoviesMenu
 {
-    public Integer[] id = {0, 1, 2};
+    public static Integer[] id = {0, 1, 2};
 
-    public String[] name = {
+    public static String[] name = {
             "Fifty Shades Of Grey",
             "Fifty Shades Freed",
             "Fifty Shades Darker"
     };
 
-    public String[] url = {
+    public static String[] url = {
             "https://firebasestorage.googleapis.com/v0/b/supercuple.appspot"
             + ".com/o/Fifty-shades%20of%20Grey"
             + ".MP4?alt=media&token=cc1891da-d676-4dee-b42e-08b80344fb1f",
@@ -20,6 +22,12 @@ public class MoviesMenu
             "https://firebasestorage.googleapis.com/v0/b/supercuple.appspot.com/o/Fifty.Shades"
             + ".Darker.2017.720p.BluRay.x264-%5BYTS.AG%5D"
             + ".mp4?alt=media&token=cac847d7-723c-4e0a-9b81-3c5d6726bd47"
+    };
+
+    public static Integer[] cover = {
+            R.drawable.shades_cover,
+            R.drawable.freed_cover,
+            R.drawable.darker_cover
     };
 
 }

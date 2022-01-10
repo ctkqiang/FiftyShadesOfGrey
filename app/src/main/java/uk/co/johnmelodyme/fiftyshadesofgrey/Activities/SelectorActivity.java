@@ -10,7 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import uk.co.johnmelodyme.fiftyshadesofgrey.Constants.BooksMenu;
+import uk.co.johnmelodyme.fiftyshadesofgrey.Constants.MoviesMenu;
 import uk.co.johnmelodyme.fiftyshadesofgrey.CustomComponents.EbookMenuList;
+import uk.co.johnmelodyme.fiftyshadesofgrey.CustomComponents.MoviesMenuList;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.Utilities;
 
@@ -74,6 +76,39 @@ public class SelectorActivity extends AppCompatActivity
                 break;
 
             case 1:
+                /* Occupy list view with the constant data */
+                MoviesMenuList moviesMenuList = new MoviesMenuList(
+                        SelectorActivity.this,
+                        MoviesMenu.id,
+                        MoviesMenu.name,
+                        MoviesMenu.url,
+                        MoviesMenu.cover
+                );
+
+                /* Assign adapter to listView */
+                this.listView.setAdapter(moviesMenuList);
+
+                /* Assign onClick event for listView */
+                this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position,
+                                            long l)
+                    {
+                        utilities.parseData(
+                                SelectorActivity.this,
+                                VideoActivity.class,
+                                "movie_asset",
+                                String.valueOf(MoviesMenu.url[position])
+                        );
+
+                        Log.d(TAG, "... opening movies at " + position);
+                    }
+                });
+
+                break;
+
+
             case 2:
             case 3:
             default:
