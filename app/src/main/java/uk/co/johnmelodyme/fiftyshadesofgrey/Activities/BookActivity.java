@@ -1,15 +1,16 @@
 package uk.co.johnmelodyme.fiftyshadesofgrey.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.res.AssetManager;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
-import java.io.InputStream;
+import androidx.appcompat.app.AppCompatActivity;
 
 import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.Utilities;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
@@ -19,6 +20,7 @@ public class BookActivity extends AppCompatActivity
     private static final String TAG = "50ShadesOfGrey";
     public Utilities utilities;
     public WebView webView;
+    public ProgressDialog progressDialog;
 
     public String getBookAsset(Activity activity)
     {
@@ -35,6 +37,9 @@ public class BookActivity extends AppCompatActivity
 
         /* Declaration of layout user components */
         webView = (WebView) findViewById(R.id.book_view);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading Data...");
+        progressDialog.setCancelable(false);
 
         /* Get Book Asset Location */
         this.getBookAsset(activity);
@@ -49,11 +54,45 @@ public class BookActivity extends AppCompatActivity
         this.renderComponents(BookActivity.this);
 
         /* Load Book asset */
+        this.webView.requestFocus();
         this.webView.getSettings().setJavaScriptEnabled(true);
-        this.webView.getSettings().setLoadWithOverviewMode(true);
-        this.webView.getSettings().setUseWideViewPort(true);
-        this.webView.loadUrl("file:///android_res/raw/" + this.getBookAsset(BookActivity.this));
+        this.webView.loadUrl(
+                "https://docs.google.com/viewer?embedded=true&url=" +
+                "https://raw.githubusercontent.com/johnmelodyme/FiftyShadesOfGrey/main/app/src"
+                + "/main/res/raw/" +
+                this.getBookAsset(BookActivity.this)
+        );
 
-        Log.d(TAG, "onCreate: "  + this.getBookAsset(BookActivity.this));
+        this.webView.setWebViewClient(new WebViewClient()
+        {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request)
+            {
+                view.loadUrl(
+                        "https://docs.google.com/viewer?embedded=true&url=" +
+                        "https://raw.githubusercontent"
+                        + ".com/johnmelodyme/FiftyShadesOfGrey/main/app/src/main/res/raw/" +
+                        getBookAsset(BookActivity.this)
+                );
+                return true;
+            }
+        });
+
+        this.webView.setWebChromeClient(new WebChromeClient()
+        {
+            public void onProgressChanged(WebView view, int progress)
+            {
+                if (progress < 100)
+                {
+                    progressDialog.show();
+                }
+                if (progress == 100)
+                {
+                    progressDialog.dismiss();
+                }
+            }
+        });
+
+        Log.d(TAG, "onCreate: " + this.getBookAsset(BookActivity.this));
     }
 }
