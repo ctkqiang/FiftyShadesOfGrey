@@ -93,7 +93,6 @@ public class VideoActivity extends AppCompatActivity
         super.onStart();
 
         this.getVideoUrl(this);
-        Log.d(TAG, this.getVideoUrl(this));
     }
 
     @Override
