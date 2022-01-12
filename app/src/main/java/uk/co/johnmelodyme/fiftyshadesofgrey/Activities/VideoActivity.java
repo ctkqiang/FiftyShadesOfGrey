@@ -1,9 +1,12 @@
 package uk.co.johnmelodyme.fiftyshadesofgrey.Activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -95,11 +98,38 @@ public class VideoActivity extends AppCompatActivity
         this.getVideoUrl(this);
     }
 
+    @SuppressLint("ObsoleteSdkInt")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            this.getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
+        }
+
+        Toast.makeText(
+                this,
+                "Please wait patiently, while we load the movie. <3",
+                Toast.LENGTH_LONG
+        ).show();
+        
         this.renderComponent(VideoActivity.this);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+
+        exoPlayer.stop();
+    }
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        exoPlayer.stop();
     }
 }

@@ -24,6 +24,7 @@
         <activity
             android:name=".Activities.VideoActivity"
             android:screenOrientation="fullSensor"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity android:name=".Activities.BookActivity" />
         <activity android:name=".Activities.SelectorActivity" />
