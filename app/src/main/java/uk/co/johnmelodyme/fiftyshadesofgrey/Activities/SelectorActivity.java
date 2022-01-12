@@ -102,6 +102,7 @@ public class SelectorActivity extends AppCompatActivity
                                 String.valueOf(MoviesMenu.url[position])
                         );
 
+
                         Log.d(TAG, "... opening movies at " + position);
                     }
                 });
