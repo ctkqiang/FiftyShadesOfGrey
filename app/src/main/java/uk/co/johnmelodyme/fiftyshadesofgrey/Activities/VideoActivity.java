@@ -41,6 +41,7 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
 import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.NetworkInspector;
+import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.Services;
 import uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces.Utilities;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
@@ -49,6 +50,7 @@ public class VideoActivity extends AppCompatActivity
 {
     private static final String TAG = "50ShadesOfGrey";
     public Utilities utilities;
+    public Services services;
     public String endpoint;
     public SimpleExoPlayer exoPlayer;
     public SimpleExoPlayerView playerView;
@@ -62,6 +64,7 @@ public class VideoActivity extends AppCompatActivity
     {
         /* Get Utilities Class */
         this.utilities = new Utilities(TAG);
+        this.services = new Services(TAG, VideoActivity.this);
         this.endpoint = utilities.getParsedData(activity, "movie_asset");
 
         if (endpoint == null)
@@ -154,11 +157,6 @@ public class VideoActivity extends AppCompatActivity
             this.getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
         }
 
-        Toast.makeText(
-                this,
-                "Please wait patiently, while we load the movie. <3",
-                Toast.LENGTH_LONG
-        ).show();
 
         this.renderComponent(VideoActivity.this);
 
@@ -281,6 +279,16 @@ public class VideoActivity extends AppCompatActivity
 
             /* Render Buffering animation */
             this.onProgressBar(playbackState);
+
+            if (playbackState == exoPlayer.STATE_READY)
+            {
+                services.pushNotification(getResources().getString(R.string.buffeing_msg));
+            }
+
+            if (playbackState == exoPlayer.STATE_BUFFERING)
+            {
+                services.pushNotification(getResources().getString(R.string.loading_movie));
+            }
         }
 
         @Override

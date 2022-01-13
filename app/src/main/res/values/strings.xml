@@ -27,4 +27,6 @@
     <string name="ads_id">ca-app-pub-7608533085938915/6799584783</string>
     <string name="caption_buy_me_coffee">*By clicking the button above, you will be redirected to 3rd party source.</string>
     <string name="loading_data">Loading Data...</string>
+    <string name="buffeing_msg">Playing movie...</string>
+    <string name="loading_movie">Please wait the movie is loading...</string>
 </resources>

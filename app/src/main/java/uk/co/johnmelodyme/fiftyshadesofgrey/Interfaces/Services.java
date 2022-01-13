@@ -5,12 +5,15 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.os.IBinder;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -22,21 +25,31 @@ import java.net.URL;
 
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
-public class Services
+public class Services extends Service
 {
-    public static void openBuyMeCoffee(String TAG, Context context)
+
+    public String TAG;
+    public Activity activity;
+
+    public Services(String TAG, Activity activity)
+    {
+        this.TAG = TAG;
+        this.activity = activity;
+    }
+
+    public void openBuyMeCoffee(String TAG)
     {
         Intent browserIntent = new Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse(context.getString(R.string.buymecoffee))
+                Uri.parse(this.activity.getString(R.string.buymecoffee))
         );
 
-        context.startActivity(browserIntent);
+        this.activity.startActivity(browserIntent);
 
         Log.d(TAG, "=> onOpenBuyMeCoffee: #opening buy me a coffee web-page ");
     }
 
-    public static void downloadSource(String endpointUrl)
+    public void downloadSource(String endpointUrl)
     {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
@@ -44,7 +57,7 @@ public class Services
     }
 
     @SuppressLint("ObsoleteSdkInt")
-    public void pushNotification(String payload, Activity activity)
+    public void pushNotification(String payload)
     {
         NotificationManagerCompat notificationManagerCompat;
         Notification notification;
@@ -53,11 +66,11 @@ public class Services
         {
             NotificationChannel channel = new NotificationChannel(
                     "channel",
-                    activity.getString(R.string.app_name),
+                    this.activity.getString(R.string.app_name),
                     NotificationManager.IMPORTANCE_HIGH
             );
 
-            NotificationManager manager = (NotificationManager) activity.getSystemService(
+            NotificationManager manager = (NotificationManager) this.activity.getSystemService(
                     NotificationManager.class
             );
 
@@ -65,21 +78,46 @@ public class Services
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
-                activity.getApplicationContext(),
+                this.activity.getApplicationContext(),
                 "channel"
         );
 
-        builder.setContentTitle(activity.getString(R.string.app_name));
+        builder.setContentTitle(this.activity.getString(R.string.app_name));
         builder.setContentText(payload);
         builder.setSmallIcon(R.drawable.fifty);
 
         notification = builder.build();
 
         notificationManagerCompat = NotificationManagerCompat.from(
-                activity.getApplicationContext()
+                this.activity.getApplicationContext()
         );
 
         notificationManagerCompat.notify(1, notification);
 
+        Log.d(TAG, "pushNotification: " + payload);
+
+    }
+
+    @Override
+    public void onCreate()
+    {
+
+        /* TODO Adjust this */
+        this.pushNotification("some 50 shades quotes");
+
+        super.onCreate();
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+    }
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent)
+    {
+        return null;
     }
 }

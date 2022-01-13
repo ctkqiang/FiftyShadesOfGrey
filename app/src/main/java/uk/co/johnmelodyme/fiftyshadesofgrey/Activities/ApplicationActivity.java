@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -52,7 +54,7 @@ public class ApplicationActivity extends AppCompatActivity
     {
         /* Get Utilities class */
         utilities = new Utilities(TAG);
-        services = new Services();
+        services = new Services(TAG, ApplicationActivity.this);
 
         /* Set custom action bar */
         this.setActionBar(ApplicationActivity.this);
@@ -129,7 +131,7 @@ public class ApplicationActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    Services.openBuyMeCoffee(TAG, ApplicationActivity.this);
+                    services.openBuyMeCoffee(TAG);
                 }
             });
         }
@@ -141,7 +143,7 @@ public class ApplicationActivity extends AppCompatActivity
     protected void onStart()
     {
         super.onStart();
-        this.services.pushNotification("asd", this);
+        this.startService(new Intent(this.getBaseContext(), Service.class));
     }
 
     @SuppressLint("NonConstantResourceId")
