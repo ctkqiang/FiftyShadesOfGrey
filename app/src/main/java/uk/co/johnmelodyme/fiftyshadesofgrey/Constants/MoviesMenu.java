@@ -13,7 +13,9 @@ public class MoviesMenu
     };
 
     public static String[] url = {
-           "https://public.bl.files.1drv.com/y4mIQ2eKKchNq60cK5_gW6vPskCVOKXlGi-1zlr-Ov8JOZHLR3rRe_8pcHoufksMMMyRChWz8OcA89BRgaJBlxsBHMMeXubOswPK6Rw9v14iPW5JfCgwczgtJvgXcocVaZmhv0Vi-CyspSis33rkwIKlk1V54Eq-3QD-P_DoI7XQOrFhxDQ8fyKIzPTsUdK7ina/Fifty-shades%20of%20Grey.MP4?psid=1","",""
+"https://edef2.pcloud.com/cfZbj7lk7ZWOq9jzZuPG0ZZxtMgi7ZQ5ZZUCRZZydYrvZzVZLXZokZgkZYkZDXZ3kZVVZLVZ0XZ8XZjVZgXZSkZm0Wu7Mma3l5ol5Ntc1b8QVnChQtV/Fifty.Shades.Freed.2018.720p.BluRay.x264-%5BYTS.AM%5D.mp4",
+"https://edef2.pcloud.com/cfZbj7lk7ZWOq9jzZuPG0ZZxtMgi7ZQ5ZZUCRZZydYrvZzVZLXZokZgkZYkZDXZ3kZVVZLVZ0XZ8XZjVZgXZSkZm0Wu7Mma3l5ol5Ntc1b8QVnChQtV/Fifty.Shades.Freed.2018.720p.BluRay.x264-%5BYTS.AM%5D.mp4",
+""
     };
 
     public static Integer[] cover = {
