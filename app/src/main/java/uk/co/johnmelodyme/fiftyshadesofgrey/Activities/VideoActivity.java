@@ -163,7 +163,7 @@ public class VideoActivity extends AppCompatActivity
         /* Connectivity Inspection */
         if (!this.networkInspector.checkConnection(this))
         {
-            Toast.makeText(this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+            this.services.pushNotification("No Internet Connection");
         }
     }
 
@@ -223,7 +223,8 @@ public class VideoActivity extends AppCompatActivity
     {
         DefaultDataSourceFactory dataSourceFactory = new DefaultDataSourceFactory(
                 this,
-                Util.getUserAgent(this, "exo-demo")
+                Util.getUserAgent(this, "50ShadesOfGrey"),
+                new DefaultBandwidthMeter()
         );
 
         this.mediaSource = new ExtractorMediaSource(parse, dataSourceFactory,

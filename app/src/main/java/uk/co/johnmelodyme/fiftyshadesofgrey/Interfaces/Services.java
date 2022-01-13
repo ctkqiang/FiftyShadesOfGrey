@@ -2,15 +2,20 @@ package uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -20,14 +25,11 @@ import androidx.core.app.NotificationManagerCompat;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
+import uk.co.johnmelodyme.fiftyshadesofgrey.Activities.ApplicationActivity;
 import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
 public class Services extends Service
 {
-
     public String TAG;
     public Activity activity;
 
@@ -85,6 +87,7 @@ public class Services extends Service
         builder.setContentTitle(this.activity.getString(R.string.app_name));
         builder.setContentText(payload);
         builder.setSmallIcon(R.drawable.fifty);
+        builder.setNumber(1);
 
         notification = builder.build();
 
@@ -101,10 +104,8 @@ public class Services extends Service
     @Override
     public void onCreate()
     {
-
         /* TODO Adjust this */
         this.pushNotification("some 50 shades quotes");
-
         super.onCreate();
     }
 
@@ -119,5 +120,35 @@ public class Services extends Service
     public IBinder onBind(Intent intent)
     {
         return null;
+    }
+
+    public void scheduleNotification(Context context, long delay, int notificationId,
+                                     String message)
+    {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+                .setContentTitle(context.getString(R.string.app_name))
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setSmallIcon(R.drawable.fifty)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+
+        Intent intent = new Intent(context, ApplicationActivity.class);
+        PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent,
+                PendingIntent.FLAG_CANCEL_CURRENT
+        );
+        builder.setContentIntent(activity);
+
+        Notification notification = builder.build();
+
+        Intent notificationIntent = new Intent(context, PushNotification.class);
+        notificationIntent.putExtra(PushNotification.NOTIFICATION_ID, notificationId);
+        notificationIntent.putExtra(PushNotification.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId,
+                notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT
+        );
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
     }
 }

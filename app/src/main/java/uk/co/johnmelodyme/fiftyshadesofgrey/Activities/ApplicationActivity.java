@@ -144,6 +144,9 @@ public class ApplicationActivity extends AppCompatActivity
     {
         super.onStart();
         this.startService(new Intent(this.getBaseContext(), Service.class));
+
+        this.services.scheduleNotification(this.getApplicationContext(), 1, 1, "SOME 50shades "
+                                                                               + "quote");
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -184,6 +187,9 @@ public class ApplicationActivity extends AppCompatActivity
 
             case R.id.report:
             case R.id.support:
+                ApplicationActivity.this.showPaymentBottomSheetDialogue();
+                break;
+
             default:
                 break;
 

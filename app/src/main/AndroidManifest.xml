@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -24,7 +25,9 @@
         <activity
             android:name=".Activities.VideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection|touchscreen"
-            android:screenOrientation="fullSensor"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensor"
+            android:supportsPictureInPicture="true"
             android:theme="@style/Theme.MaterialComponents.NoActionBar"
             android:turnScreenOn="true" />
         <activity android:name=".Activities.BookActivity" />
@@ -40,7 +43,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Interfaces.PushNotification" />
+        <receiver
+            android:name=".Interfaces.PushNotification"
+            android:enabled="true" />
     </application>
 
 </manifest>

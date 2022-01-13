@@ -20,7 +20,6 @@ public class EbookMenuList extends ArrayAdapter
     public Integer[] cover;
     public String[] file;
     public String[] bookName;
-
     public String[] bookDescription;
 
     public EbookMenuList(Activity activity, Integer[] id, Integer[] cover, String[] file,

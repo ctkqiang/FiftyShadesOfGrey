@@ -18,30 +18,11 @@ public class PushNotification extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(
-                Context.NOTIFICATION_SERVICE
-        );
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification notification = intent.getParcelableExtra(NOTIFICATION);
+        int notificationId = intent.getIntExtra(NOTIFICATION_ID, 0);
+        notificationManager.notify(notificationId, notification);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O)
-        {
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-
-            NotificationChannel notificationChannel = new NotificationChannel(
-                    NOTIFICATION_CHANNEL_ID,
-                    "NOTIFICATION_CHANNEL_NAME",
-                    importance
-            );
-
-            assert notificationManager != null;
-
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
-        int id = intent.getIntExtra(NOTIFICATION_ID, 0);
-
-        assert notificationManager != null;
-
-        notificationManager.notify(id, notification);
     }
 }
