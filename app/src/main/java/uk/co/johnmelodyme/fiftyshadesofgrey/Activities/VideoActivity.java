@@ -130,7 +130,7 @@ public class VideoActivity extends AppCompatActivity
     {
         super.onStart();
 
-        System.out.println(this.getVideoUrl(this));
+        this.getVideoUrl(this);
     }
 
     @SuppressLint("ObsoleteSdkInt")
@@ -281,6 +281,8 @@ public class VideoActivity extends AppCompatActivity
 
             /* Render Buffering animation */
             this.onProgressBar(playbackState);
+
+            
         }
 
         @Override
