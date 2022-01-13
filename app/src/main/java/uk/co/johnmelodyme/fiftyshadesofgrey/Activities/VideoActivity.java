@@ -281,8 +281,6 @@ public class VideoActivity extends AppCompatActivity
 
             /* Render Buffering animation */
             this.onProgressBar(playbackState);
-
-            
         }
 
         @Override

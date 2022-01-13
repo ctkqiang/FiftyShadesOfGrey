@@ -33,6 +33,7 @@ public class ApplicationActivity extends AppCompatActivity
     public Utilities utilities;
     public ListView listView;
     public ImageButton coffee;
+    public Services services;
 
     public void setActionBar(Activity activity)
     {
@@ -51,6 +52,7 @@ public class ApplicationActivity extends AppCompatActivity
     {
         /* Get Utilities class */
         utilities = new Utilities(TAG);
+        services = new Services();
 
         /* Set custom action bar */
         this.setActionBar(ApplicationActivity.this);
@@ -133,6 +135,13 @@ public class ApplicationActivity extends AppCompatActivity
         }
 
         bottomSheetDialog.show();
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        this.services.pushNotification("asd", this);
     }
 
     @SuppressLint("NonConstantResourceId")

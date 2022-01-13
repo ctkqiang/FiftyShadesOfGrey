@@ -2,23 +2,14 @@ package uk.co.johnmelodyme.fiftyshadesofgrey.Interfaces;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.SystemClock;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
-
-import uk.co.johnmelodyme.fiftyshadesofgrey.Activities.ApplicationActivity;
-import uk.co.johnmelodyme.fiftyshadesofgrey.R;
 
 public final class Utilities
 {
@@ -83,19 +74,4 @@ public final class Utilities
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
     }
 
-    public void pushNotification(String payload, Context context)
-    {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(
-                context,
-                default_notification_channel_id
-        );
-
-        builder.setContentTitle("Scheduled Notification");
-        builder.setContentText(payload);
-        builder.setSmallIcon(R.drawable.fifty);
-        builder.setAutoCancel(true);
-        builder.setChannelId(NOTIFICATION_CHANNEL_ID);
-
-        builder.build();
-    }
 }
